@@ -57,7 +57,7 @@ char lavebogstav() {
 String lavesaetning() {
   int i = 0;
   String str ="";
-  while (i < 1500) {
+  while (i < 1500) { // String str er således 1500 tegn
     str = str + lavebogstav();
     i++;
   }
