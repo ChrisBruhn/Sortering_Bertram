@@ -63,6 +63,7 @@ String lavesaetning() {
   }
   return str;
 }
+//Gnome Sorting 
 String sortMyStr(String s) {
   int i = 0;
   while (i < s.length() - 1) {
