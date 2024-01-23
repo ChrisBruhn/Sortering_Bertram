@@ -64,23 +64,15 @@ String lavesaetning() {
   return str;
 }
 String sortMyStr(String s) {
-  String head, tail;
-  head = "";
-  tail = "";
-  for (int i = 0; i<strToSort.length()-1; i++) {
-    for (int j = 0; j<strToSort.length()-1; j++) {
-
-      // vi glemte betingelsen for hvornår vi skal sortere!
-      if (s.charAt(j)> s.charAt(j+1)) {
-        char tmp1 = s.charAt(j);
-        char tmp2 = s.charAt(j+1);
-        head=s.substring(0, j);
-
-        if (j<s.length()-1) {
-          tail=s.substring(j+2, s.length());
-        }
-        s = head+tmp2+tmp1+tail;
-        j=0;
+  int i = 0;
+  while (i < s.length() - 1) {
+    if (i == 0 || s.charAt(i) <= s.charAt(i + 1)) {
+      i++;
+    } else {
+      char tmp = s.charAt(i);
+      s = s.substring(0, i) + s.charAt(i + 1) + tmp + s.substring(i + 2);
+      if (i > 0) {
+        i--;
       }
     }
   }
